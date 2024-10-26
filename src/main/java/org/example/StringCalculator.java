@@ -10,8 +10,18 @@ public class StringCalculator {
                 return Integer.parseInt(numbers);
             }
         }
+        String arr[] = numbers.split(",");
 
-        return Integer.parseInt(numbers.split(",")[0].trim())+Integer.parseInt(numbers.split(",")[1].trim());
+        return sum(arr);
+    }
+
+    public int sum(String[] arr){
+        int totalSum=0;
+
+        for(String num:arr){
+            totalSum+=Integer.parseInt(num);
+        }
+        return totalSum;
     }
 
 }
