@@ -28,4 +28,9 @@ public class StringCalculatorTest {
     public void get_a_number_for_single_string(){
         Assertions.assertEquals(2, stringCalculator.add("2"));
     }
+
+    @Test
+    public void get_sum_of_two_numbers(){
+        Assertions.assertEquals(5, stringCalculator.add("2,3"));
+    }
 }
