@@ -52,4 +52,9 @@ public class StringCalculatorTest {
             Assertions.assertEquals(e.getMessage(), "Negative numbers not allowed: -2,-3");
         }
     }
+
+    @Test
+    public void test_for_other_delimeters(){
+        Assertions.assertEquals(3, stringCalculator.add("//;\\n1;2"));
+    }
 }
