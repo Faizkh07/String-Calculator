@@ -10,7 +10,13 @@ public class StringCalculator {
                 return Integer.parseInt(numbers);
             }
         }
-        String arr[] = numbers.split("," + "|\n");
+        String delimeter = ",";
+        if (numbers.matches("//(.*)\n(.*)")) {
+            delimeter = Character.toString(numbers.charAt(2));
+            numbers = numbers.substring(4);
+        }
+
+        String arr[] = numbers.split(delimeter + "|\n");
 
         return sum(arr);
     }

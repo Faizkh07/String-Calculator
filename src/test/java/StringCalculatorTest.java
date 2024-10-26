@@ -55,6 +55,6 @@ public class StringCalculatorTest {
 
     @Test
     public void test_for_other_delimeters(){
-        Assertions.assertEquals(3, stringCalculator.add("//;\\n1;2"));
+        Assertions.assertEquals(3, stringCalculator.add("//;\n1;2"));
     }
 }
