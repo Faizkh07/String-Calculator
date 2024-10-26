@@ -38,4 +38,9 @@ public class StringCalculatorTest {
     public void get_sum_of_multiple_numbers(){
         Assertions.assertEquals(10, stringCalculator.add("3,2,4,1"));
     }
+
+    @Test
+    public void get_sum_for_newLine(){
+        Assertions.assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
 }
