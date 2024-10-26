@@ -14,10 +14,10 @@ public class StringCalculatorTest {
         stringCalculator = new StringCalculator();
     }
 
-    @AfterEach
-    public void destroy(){
-        stringCalculator = null;
-    }
+//    @AfterEach
+//    public void destroy(){
+//        stringCalculator = null;
+//    }
 
     @Test
     public void get_zero_for_empty_string_number(){
@@ -56,5 +56,16 @@ public class StringCalculatorTest {
     @Test
     public void test_for_other_delimeters(){
         Assertions.assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+    //$
+
+    @Test
+    public void test_for_dollar_multiple(){
+        Assertions.assertEquals(6, stringCalculator.add("//@\n3@2"));
+    }
+
+    @Test
+    public void test_for_dollar_multiple_numbers(){
+        Assertions.assertEquals(60, stringCalculator.add("//@\n3@2@10@"));
     }
 }

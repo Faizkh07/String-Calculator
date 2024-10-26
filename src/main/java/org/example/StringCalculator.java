@@ -15,10 +15,32 @@ public class StringCalculator {
             delimeter = Character.toString(numbers.charAt(2));
             numbers = numbers.substring(4);
         }
+        for(int i=0; i<numbers.length(); i++){
+            char ch = numbers.charAt(i);
+            if(ch=='@'){
+                return multiply(numbers);
+            }
+        }
 
         String arr[] = numbers.split(delimeter + "|\n");
 
+        for(int i=0; i<numbers.length(); i++){
+            char ch = numbers.charAt(i);
+            if(ch=='@'){
+                return multiply(numbers);
+            }
+        }
+
         return sum(arr);
+    }
+
+    private int multiply(String numbers) {
+        int sum = 0;
+        String arr[] = numbers.split("@");
+
+        sum = Integer.parseInt(arr[0]) * Integer.parseInt(arr[1]);
+
+        return sum;
     }
 
     public int sum(String[] arr){
