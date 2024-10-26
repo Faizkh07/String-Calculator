@@ -43,4 +43,13 @@ public class StringCalculatorTest {
     public void get_sum_for_newLine(){
         Assertions.assertEquals(6, stringCalculator.add("1\n2,3"));
     }
+
+    @Test
+    public void test_for_negative_numbers(){
+        try {
+            stringCalculator.add("1,-2,-3,4");
+        }catch (IllegalArgumentException e){
+            Assertions.assertEquals(e.getMessage(), "Negative numbers not allowed: -2,-3");
+        }
+    }
 }

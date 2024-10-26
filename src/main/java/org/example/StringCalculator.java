@@ -18,8 +18,21 @@ public class StringCalculator {
     public int sum(String[] arr){
         int totalSum=0;
 
+        StringBuilder negativeNumbers = new StringBuilder();
+
         for(String num:arr){
+            if(Integer.parseInt(num)<0){
+                if(negativeNumbers.toString().isEmpty()){
+                    negativeNumbers = new StringBuilder(num);
+
+                }else{
+                    negativeNumbers.append(",").append(num);
+                }
+            }
             totalSum+=Integer.parseInt(num);
+        }
+        if(!negativeNumbers.isEmpty()){
+            throw new IllegalArgumentException("Negative numbers not allowed:" + " "+ negativeNumbers);
         }
         return totalSum;
     }
