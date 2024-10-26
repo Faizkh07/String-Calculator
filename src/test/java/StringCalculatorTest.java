@@ -23,4 +23,9 @@ public class StringCalculatorTest {
     public void get_zero_for_empty_string_number(){
         Assertions.assertEquals(0, stringCalculator.add(""));
     }
+
+    @Test
+    public void get_a_number_for_single_string(){
+        Assertions.assertEquals(2, stringCalculator.add("2"));
+    }
 }
